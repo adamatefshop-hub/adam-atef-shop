@@ -4,7 +4,7 @@ Boutique digitale ultra-rapide optimisée pour la vente d'abonnements streaming,
 
 - **Email de contact :** `adam.atefShop@gmail.com`
 - **Numéro WhatsApp & D17 :** `51 725 481` (+216 51 725 481)
-- **Taux de change appliqué :** 1 USD = 3.85 DT
+- **Taux de change appliqué :** 1 USD = 3.9 DT
 
 ---
 
@@ -12,7 +12,7 @@ Boutique digitale ultra-rapide optimisée pour la vente d'abonnements streaming,
 
 - `index.html` : Page principale responsive (Mobile-first, Tailwind CSS, Dark Mode, panier interactif, FAQ, avis).
 - `config.js` : Vos réglages personnalisés (numéro WhatsApp `21651725481`, numéro D17 `51725481`, email `adam.atefShop@gmail.com`).
-- `products.js` : Catalogue des produits (Netflix, Spotify, ChatGPT Plus, Claude, Midjourney, Steam, PS5, Xbox...) avec conversion automatique à 1$ = 3.85 DT.
+- `products.js` : Catalogue des produits (Netflix, Spotify, ChatGPT Plus, Claude, Midjourney, Steam, PS5, Xbox...) avec conversion automatique à 1$ = 3.9 DT.
 - `app.js` : Moteur de filtrage, calcul automatique du panier et générateur de messages de commande pré-remplis pour WhatsApp.
 - `assets/` : Les 5 affiches publicitaires IA haute définition format 1:1 prêtes pour vos campagnes Facebook Ads.
 

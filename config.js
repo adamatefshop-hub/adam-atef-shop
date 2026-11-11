@@ -13,8 +13,8 @@ const STORE_CONFIG = {
   displayPhone: "+216 51 725 481",
   contactEmail: "adam.atefShop@gmail.com",
   
-  // TAUX DE CHANGE (1 USD = 3.85 DT)
-  exchangeRateUSD: 3.85,
+  // TAUX DE CHANGE (1 USD = 3.9 DT)
+  exchangeRateUSD: 3.9,
 
   // Coordonnées de Paiement en Tunisie
   paymentDetails: {

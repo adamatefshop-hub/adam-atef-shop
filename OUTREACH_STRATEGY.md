@@ -3,13 +3,13 @@
 - **Site Web Direct :** [https://adamatefshop-hub.github.io/adam-atef-shop/](https://adamatefshop-hub.github.io/adam-atef-shop/)
 - **Contact WhatsApp Direct :** [+216 51 725 481](https://wa.me/21651725481)
 - **Moyens de Paiement Nationaux :** D17 & Flouci (`51 725 481` / `51725481`)
-- **Taux de Change Garanti :** **1 USD = 3.85 DT** (Aucun frais caché)
+- **Taux de Change Garanti :** **1 USD = 3.9 DT** (Aucun frais caché)
 
 ---
 
 ## 🎯 1. Cartographie des 4 Pôles Communautaires Cibles en Tunisie
 
-| Communauté Cible | Groupes Facebook Majeurs & Pages Clés | Audience & Centres d'Intérêt | Produits Phares & Tarifs (1$ = 3.85 DT) |
+| Communauté Cible | Groupes Facebook Majeurs & Pages Clés | Audience & Centres d'Intérêt | Produits Phares & Tarifs (1$ = 3.9 DT) |
 | :--- | :--- | :--- | :--- |
 | **1. Développeurs & Freelancers TN** | • *Développeurs Tunisie (Devs TN)*<br>• *Freelancers Tunisie / Upwork TN*<br>• *Tunisia Tech & AI Community*<br>• *Tunisian Geeks*<br>• *Graphic Designers Tunisie* | Développeurs web/mobile, ingénieurs logiciels, prompt engineers, UI/UX designers, créateurs de contenu B2B sans carte technologique internationale suffisante. | • **ChatGPT Plus (GPT-4o)** : 77.00 DT (20$)<br>• **Claude Pro (Sonnet 3.5)** : 77.00 DT (20$)<br>• **Midjourney AI** : Dès 38.50 DT (10$)<br>• **Canva Pro** : Dès 19.25 DT (5$) |
 | **2. Gaming Tunisia (PC & Steam)** | • *Gaming Tunisia (GT)*<br>• *Tunisian Gamers Community (TGC)*<br>• *Steam Tunisia / Tunisie Gamers*<br>• *PC Master Race Tunisie*<br>• *CS2 & Valorant Tunisie* | Gamers PC compétitifs et occasionnels, collectionneurs de skins, adeptes des soldes Steam saisonnières. | • **Steam Wallet $5** : 19.25 DT<br>• **Steam Wallet $10** : 38.50 DT<br>• **Steam Wallet $20** : 77.00 DT<br>• **Steam Wallet $50** : 192.50 DT<br>• **Steam Wallet $100** : 385.00 DT |
@@ -27,7 +27,7 @@
 🚀 Freelancers & Développeurs en Tunisie : Boostez vos projets avec l'IA sans blocage de carte bancaire !
 
 Marre du plafond de la Carte Technologique ou de l'absence de carte internationale pour vos outils indispensables ?
-Chez Adam Atef Shop, activez vos abonnements IA officiels et payez directement en Dinars Tunisiens via D17 ou Flouci avec un taux fixe garanti de 1$ = 3.85 DT :
+Chez Adam Atef Shop, activez vos abonnements IA officiels et payez directement en Dinars Tunisiens via D17 ou Flouci avec un taux fixe garanti de 1$ = 3.9 DT :
 
 🤖 ChatGPT Plus (GPT-4o & Canvas) : 77 DT / mois (20$)
 🧠 Claude Pro (Sonnet 3.5 / Opus) : 77 DT / mois (20$)
@@ -75,7 +75,7 @@ Walla ab3ath msg direct sur WhatsApp :
 
 Envie de chopper les derniers jeux PC ou d'ouvrir des caisses CS2 sans attendre ? Plus besoin de carte bancaire internationale ni de frais de conversion exorbitants. 
 
-Adam Atef Shop vous fournit des codes Steam Wallet officiels au taux strict de 1$ = 3.85 DT :
+Adam Atef Shop vous fournit des codes Steam Wallet officiels au taux strict de 1$ = 3.9 DT :
 🔥 Steam Wallet $5  👉 19.25 DT
 🔥 Steam Wallet $10 👉 38.50 DT
 🔥 Steam Wallet $20 👉 77.00 DT
@@ -96,7 +96,7 @@ WhatsApp Support & Ventes :
 ```markdown
 Aslema ya gamers 🇹🇳🎮 ! Mechri jdid 3la Steam walla 7achtek b skins fel CS2 / Valorant ?
 
-Tawa tnajjem techri el Steam Wallet mte3ek fi d9i9tin w b soum el sarf el s7i7 (1$ = 3.85 DT) :
+Tawa tnajjem techri el Steam Wallet mte3ek fi d9i9tin w b soum el sarf el s7i7 (1$ = 3.9 DT) :
 ▪️ Carte $5 = 19.25 DT
 ▪️ Carte $10 = 38.50 DT
 ▪️ Carte $20 = 77.00 DT
@@ -131,7 +131,7 @@ Ne manquez plus aucun jeu du PS Store ni vos parties multijoueurs. Adam Atef Sho
 • Xbox Game Pass Ultimate 1 Mois (400+ jeux console/PC) = 38.50 DT (10$)
 • Cartes Xbox Wallet à partir de 38.50 DT
 
-Taux appliqué : 1$ = 3.85 DT fixe.
+Taux appliqué : 1$ = 3.9 DT fixe.
 Commandez en un clic :
 👉 https://adamatefshop-hub.github.io/adam-atef-shop/
 WhatsApp :
@@ -143,7 +143,7 @@ WhatsApp :
 Moul3in el FIFA / FC 25 wel Warzone fi Tounes ⚽🎮 !
 7ab techri FC Points walla t'actiwi el PS Plus Extra / Essential bech tal3ab online m3a shabek ?
 
-Kol chay mawjoud 3and Adam Atef Shop b aswem claire w transparente (1$ = 3.85 DT) :
+Kol chay mawjoud 3and Adam Atef Shop b aswem claire w transparente (1$ = 3.9 DT) :
 🔹 PSN $10 US : 38.50 DT
 🔹 PSN $25 US : 96.25 DT
 🔹 PS Plus Essential : 46.20 DT
@@ -170,7 +170,7 @@ Profitez de vos plateformes favorites en 4K Ultra HD sans tracas de cartes banca
 ▶️ YouTube Premium : Zéro publicité + lecture en arrière-plan à 15.40 DT / mois (4$)
 
 Paiement sécurisé et instantané via D17 ou Flouci (51 725 481).
-Taux officiel garanti : 1$ = 3.85 DT.
+Taux officiel garanti : 1$ = 3.9 DT.
 
 Visitez notre boutique en ligne :
 👉 https://adamatefshop-hub.github.io/adam-atef-shop/
@@ -188,7 +188,7 @@ Pour convertir organiquement les membres qui posent régulièrement des question
    > *"Aslema khouya ! 3andek Adam Atef Shop ykhalfoulek el abonnement ChatGPT Plus (77 DT) walla Claude Pro officiel w ykhalsou bil D17 w Flouci f draj. Chouf hna: https://adamatefshop-hub.github.io/adam-atef-shop/ walla contactehom WhatsApp 51 725 481."*
 
 2. **Demande de Steam Wallet :**
-   > *"Salut ! Si tu cherches des codes Steam Wallet officiels instantanés au taux réel (1$ = 3.85 DT sans commission abusive), regarde sur https://adamatefshop-hub.github.io/adam-atef-shop/ - paiement par Flouci ou D17 au 51725481, testé et validé !"*
+   > *"Salut ! Si tu cherches des codes Steam Wallet officiels instantanés au taux réel (1$ = 3.9 DT sans commission abusive), regarde sur https://adamatefshop-hub.github.io/adam-atef-shop/ - paiement par Flouci ou D17 au 51725481, testé et validé !"*
 
 3. **Demande de PSN / PS Plus :**
    > *"Dispo chez Adam Atef Shop khouya, codes US et FR avec paiement local D17/Flouci. WhatsApp direct : +216 51 725 481."*

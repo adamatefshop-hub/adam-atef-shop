@@ -1,537 +1,313 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adam Atef Shop | Abonnements Streaming, IA & Cartes Jeux Vidéo en Tunisie</title>
-  <meta name="description" content="Achetez vos abonnements Netflix, ChatGPT Plus, Steam Wallet, PS5 et Xbox en Dinars Tunisiens (D17, Flouci au 51 725 481). Taux officiel 1$ = 3.85 DT. Livraison rapide sur WhatsApp.">
+  <title>Adam Atef Shop | Abonnements, IA & Cartes Gaming en Tunisie</title>
+  <meta name="description" content="Abonnements ChatGPT, Netflix, cartes Steam, PlayStation et Xbox payables en dinars tunisiens via D17 et Flouci. Livraison rapide sur WhatsApp.">
 
-  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Manrope', 'sans-serif'] },
           colors: {
-            brand: {
-              DEFAULT: '#10B981',
-              dark: '#059669',
-              light: '#34D399',
-            }
+            navy: { 950: '#0A1630', 900: '#0F1F44', 800: '#16295A', 700: '#1E3A78' },
+            accent: { DEFAULT: '#2F5BEA', dark: '#2447C4', soft: '#EEF2FF' }
           }
         }
       }
     }
   </script>
-
-  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <style>
-    /* Sleek Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #080c14;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #10b981;
-    }
-
-    .glass-card {
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .glass-nav {
-      background: rgba(8, 12, 20, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .glow-emerald {
-      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
-    }
-
-    .glow-card:hover {
-      box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.15);
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
   </style>
 </head>
-<body class="bg-[#080C14] text-gray-100 min-h-screen flex flex-col font-sans selection:bg-emerald-500 selection:text-black antialiased">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
-  <!-- TOP BANNER -->
-  <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white text-[11px] sm:text-xs py-2 px-4 text-center font-bold tracking-wide flex items-center justify-center gap-2 shadow-md">
-    <span>🇹🇳 Boutique Officielle en Tunisie</span>
-    <span class="opacity-50">•</span>
-    <span>Paiement Direct D17 & Flouci au <strong class="underline cursor-pointer" onclick="copyPaymentNumber('51725481')">51 725 481</strong></span>
-    <span class="opacity-50">•</span>
-    <span class="bg-black/40 px-2 py-0.5 rounded-full font-black current-exchange-rate">1$ = 3.85 DT</span>
-    <span class="opacity-50">•</span>
-    <span>Livraison WhatsApp en 5-15 min ⚡</span>
+  <!-- Top info bar -->
+  <div class="bg-navy-950 text-slate-300 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Tunisie</span>
+        <span class="hidden sm:flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i> Livraison en 5 à 15 min</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>Taux : <strong class="text-white current-exchange-rate">1$ = 3.9 DT</strong></span>
+        <a href="mailto:adam.atefShop@gmail.com" class="hidden md:inline hover:text-white">adam.atefShop@gmail.com</a>
+      </div>
+    </div>
   </div>
 
-  <!-- NAVIGATION NAVBAR -->
-  <header class="sticky top-0 z-40 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-4">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-emerald-300 flex items-center justify-center text-black font-black text-2xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300">
-          ⚡
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-display text-xl font-black tracking-tight text-white">
-              Adam Atef <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Shop</span>
-            </span>
-            <span class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              En Ligne 7j/7
-            </span>
-          </div>
-          <span class="block text-[11px] text-gray-400 font-medium tracking-wide">Abonnements IA, Streaming & Cartes Gaming</span>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center font-display font-extrabold text-sm">AA</div>
+        <div class="leading-tight">
+          <div class="font-display font-extrabold text-navy-900 text-base">Adam Atef Shop</div>
+          <div class="text-[11px] text-slate-500">Services numériques</div>
         </div>
       </a>
 
-      <!-- Quick Search Bar (Desktop) -->
-      <div class="hidden lg:flex flex-1 max-w-md mx-6">
-        <div class="relative w-full">
-          <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-          <input type="text" id="search-input" placeholder="Rechercher (ChatGPT, Netflix, Steam, PS5, Xbox...)" class="w-full bg-gray-900/80 border border-gray-800 text-xs text-gray-200 placeholder-gray-500 rounded-xl pl-10 pr-14 py-2.5 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition">
-          <kbd class="hidden sm:inline-block absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-semibold text-gray-500 bg-gray-950 border border-gray-800 rounded">
-            Ctrl K
-          </kbd>
-        </div>
-      </div>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#catalogue" class="hover:text-accent">Catalogue</a>
+        <a href="#process" class="hover:text-accent">Comment commander</a>
+        <a href="#paiement" class="hover:text-accent">Paiement</a>
+        <a href="#faq" class="hover:text-accent">FAQ</a>
+      </nav>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-3">
-        <!-- Direct WhatsApp Link -->
-        <a href="https://wa.me/21651725481" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-gray-900/90 hover:bg-gray-800 border border-gray-800/80 rounded-xl text-xs font-bold text-gray-200 hover:text-emerald-400 transition shadow-sm active:scale-95">
-          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
-          <span>+216 51 725 481</span>
+      <div class="flex items-center gap-2.5">
+        <a href="https://wa.me/21651725481" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-navy-900 border border-slate-300 rounded-lg hover:bg-slate-100 transition">
+          <i data-lucide="phone" class="w-4 h-4"></i> 51 725 481
         </a>
-
-        <!-- Cart Trigger Button -->
-        <button onclick="toggleCartModal(true)" class="relative p-2.5 sm:px-4 sm:py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-gray-950 font-black rounded-xl transition flex items-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-95">
-          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-          <span class="hidden sm:inline text-xs font-black">Mon Panier</span>
-          <span class="cart-count-badge hidden absolute -top-1.5 -right-1.5 bg-rose-600 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#080C14]">
-            0
-          </span>
+        <button onclick="toggleCartModal(true)" class="relative inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-accent hover:bg-accent-dark rounded-lg transition">
+          <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Panier</span>
+          <span class="cart-count-badge hidden absolute -top-2 -right-2 bg-navy-900 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">0</span>
         </button>
-      </div>
-    </div>
-
-    <!-- Mobile Search Bar -->
-    <div class="lg:hidden px-4 pb-3">
-      <div class="relative w-full">
-        <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-        <input type="text" oninput="searchQuery = this.value; renderProducts();" placeholder="Rechercher Netflix, Steam, ChatGPT, PS5..." class="w-full bg-gray-900/90 border border-gray-800 text-xs text-gray-200 placeholder-gray-500 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-emerald-500 transition">
       </div>
     </div>
   </header>
 
   <main class="flex-grow">
-    <!-- HERO SECTION -->
-    <section class="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-24 border-b border-gray-800/60 bg-gradient-to-b from-gray-900/40 via-[#080C14] to-[#080C14]">
-      <!-- Radial background accents -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-gradient-to-b from-emerald-500/10 via-teal-500/5 to-transparent blur-3xl pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="text-center max-w-3xl mx-auto">
-          <!-- Trust Pill -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs font-bold text-emerald-400 mb-6">
-            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Pas de carte bancaire internationale ? Réglez simplement en Dinars Tunisiens !</span>
+    <!-- Hero -->
+    <section class="bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-soft text-accent text-xs font-semibold mb-5">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Paiement local en dinars tunisiens
           </div>
-
-          <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15]">
-            Abonnements & Jeux Vidéo <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-green-300">
-              Payables en Dinars Tunisiens
-            </span>
+          <h1 class="font-display text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight tracking-tight">
+            Vos abonnements et jeux, sans carte internationale.
           </h1>
-
-          <p class="mt-5 text-sm sm:text-base text-gray-400 leading-relaxed max-w-2xl mx-auto font-normal">
-            ChatGPT Plus (GPT-4o), Claude Pro, Steam Wallet, PlayStation 5, Xbox Game Pass, Netflix... 
-            Commandez vos codes et activations en toute sécurité avec <strong>D17</strong> et <strong>Flouci</strong>.
+          <p class="mt-5 text-base text-slate-600 leading-relaxed max-w-xl">
+            ChatGPT, Claude, Netflix, Spotify, Steam, PlayStation et Xbox. Réglez par D17 ou Flouci et recevez votre code ou votre activation sur WhatsApp.
           </p>
-
-          <!-- Direct Payment Info & 1-Click Copy Bar -->
-          <div class="mt-8 p-4 sm:p-5 max-w-2xl mx-auto rounded-2xl glass-card border border-emerald-500/20 shadow-xl">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div class="text-left flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <i data-lucide="smartphone" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="text-[11px] text-gray-400 font-bold uppercase tracking-wider">Compte de Paiement D17 & Flouci</div>
-                  <div class="text-lg font-black text-white tracking-wider flex items-center gap-2">
-                    51 725 481
-                    <span id="copy-feedback" class="hidden text-xs text-emerald-400 font-bold">Copié ! ✅</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-2 w-full sm:w-auto">
-                <button onclick="copyPaymentNumber('51725481')" class="flex-1 sm:flex-initial px-4 py-2.5 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold rounded-xl border border-gray-700 transition flex items-center justify-center gap-1.5 active:scale-95">
-                  <i data-lucide="copy" class="w-4 h-4"></i>
-                  <span>Copier Numéro</span>
-                </button>
-                <a href="https://wa.me/21651725481" target="_blank" class="flex-1 sm:flex-initial px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 shadow-md active:scale-95">
-                  <i data-lucide="message-circle" class="w-4 h-4"></i>
-                  <span>WhatsApp</span>
-                </a>
-              </div>
-            </div>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#catalogue" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white text-sm font-semibold rounded-lg transition">
+              Voir le catalogue <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/21651725481" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-300 text-navy-900 text-sm font-semibold rounded-lg hover:bg-slate-50 transition">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Parler à un conseiller
+            </a>
           </div>
+          <dl class="mt-10 grid grid-cols-3 gap-6 max-w-md">
+            <div><dt class="text-xs text-slate-500">Livraison</dt><dd class="font-display text-xl font-extrabold text-navy-900">5–15 min</dd></div>
+            <div><dt class="text-xs text-slate-500">Assistance</dt><dd class="font-display text-xl font-extrabold text-navy-900">7j/7</dd></div>
+            <div><dt class="text-xs text-slate-500">Paiement</dt><dd class="font-display text-xl font-extrabold text-navy-900">D17 · Flouci</dd></div>
+          </dl>
+        </div>
 
-          <!-- Interactive Currency Converter Card -->
-          <div class="mt-6 max-w-lg mx-auto p-4 rounded-xl bg-gray-900/60 border border-gray-800 text-left">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-[11px] font-bold text-gray-300 flex items-center gap-1.5">
-                <i data-lucide="calculator" class="w-3.5 h-3.5 text-emerald-400"></i>
-                Calculateur de Prix en Direct (Taux : 1$ = 3.85 DT)
-              </span>
-              <span class="text-[10px] text-emerald-400 font-semibold">Instantané</span>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-[10px] text-gray-500 font-bold mb-1">Montant en USD ($) :</label>
-                <div class="relative">
-                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs font-bold">$</span>
-                  <input type="number" id="converter-usd" value="20" placeholder="20" class="w-full bg-gray-950 border border-gray-800 rounded-lg pl-7 pr-3 py-1.5 text-xs text-white font-bold focus:border-emerald-500 focus:outline-none">
-                </div>
+        <!-- Calculator card -->
+        <div class="bg-navy-900 rounded-2xl p-7 text-white shadow-xl">
+          <div class="flex items-center justify-between mb-5">
+            <h2 class="font-display text-lg font-bold">Calculateur de prix</h2>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-white/10 current-exchange-rate">1$ = 3.9 DT</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-slate-300 mb-1.5">Montant en USD</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">$</span>
+                <input type="number" id="converter-usd" value="20" class="w-full bg-navy-800 border border-white/10 rounded-lg pl-7 pr-3 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-accent">
               </div>
-              <div>
-                <label class="block text-[10px] text-gray-500 font-bold mb-1">Équivalent en DT :</label>
-                <div class="relative">
-                  <input type="number" id="converter-dt" value="77.00" placeholder="77.00" class="w-full bg-gray-950 border border-gray-800 rounded-lg pl-3 pr-8 py-1.5 text-xs text-emerald-400 font-black focus:border-emerald-500 focus:outline-none">
-                  <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs font-bold">DT</span>
-                </div>
+            </div>
+            <div>
+              <label class="block text-xs text-slate-300 mb-1.5">Équivalent en DT</label>
+              <div class="relative">
+                <input type="number" id="converter-dt" value="78.00" class="w-full bg-navy-800 border border-white/10 rounded-lg pl-3 pr-9 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-accent">
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">DT</span>
               </div>
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- CATEGORY FILTER NAVIGATION -->
-    <section class="sticky top-18 z-30 glass-nav py-3">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between gap-4">
-          
-          <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar flex-1">
-            <button data-category="all" class="category-tab-btn active px-4 py-2 rounded-xl text-xs font-black transition whitespace-nowrap bg-emerald-500 text-black shadow-lg shadow-emerald-500/20">
-              ✨ Tous les Services
-            </button>
-            <button data-category="ai" class="category-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-gray-900/80 text-gray-300 hover:bg-gray-800 border border-gray-800">
-              🤖 Intelligence Artificielle (GPT-4o, Claude)
-            </button>
-            <button data-category="steam" class="category-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-gray-900/80 text-gray-300 hover:bg-gray-800 border border-gray-800">
-              🎮 Steam Gaming & PC
-            </button>
-            <button data-category="ps5" class="category-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-gray-900/80 text-gray-300 hover:bg-gray-800 border border-gray-800">
-              🕹️ PlayStation 5 & PS4
-            </button>
-            <button data-category="xbox" class="category-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-gray-900/80 text-gray-300 hover:bg-gray-800 border border-gray-800">
-              💚 Xbox & Game Pass
-            </button>
-            <button data-category="streaming" class="category-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-gray-900/80 text-gray-300 hover:bg-gray-800 border border-gray-800">
-              🎬 Streaming (Netflix, Spotify...)
-            </button>
-          </div>
-
-          <div class="hidden md:block text-xs font-bold text-gray-500 shrink-0" id="products-count">
-            12 services disponibles
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCTS GRID -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <!-- Rendu dynamique via app.js -->
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS TIMELINE -->
-    <section class="py-20 bg-gradient-to-b from-gray-950 via-gray-900/50 to-gray-950 border-t border-b border-gray-800/80">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-xl mx-auto mb-14">
-          <span class="text-xs font-black uppercase tracking-wider text-emerald-400">Processus de Commande Simple</span>
-          <h2 class="font-display text-2xl sm:text-4xl font-black text-white mt-2">Comment commander chez Adam Atef Shop ?</h2>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2">Votre commande est traitée et activée en 3 étapes rapides.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Step 1 -->
-          <div class="p-8 rounded-3xl glass-card relative border border-gray-800/80 hover:border-emerald-500/30 transition">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-display font-black text-xl mb-5">
-              1
+          <div id="paiement" class="mt-6 pt-6 border-t border-white/10">
+            <div class="text-xs text-slate-300 mb-2">Paiement D17 / Flouci</div>
+            <div class="flex items-center justify-between gap-3 bg-navy-800 rounded-lg px-4 py-3">
+              <div class="font-display text-2xl font-extrabold tracking-wide">51 725 481</div>
+              <button onclick="copyPaymentNumber('51725481')" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-white text-navy-900 rounded-md hover:bg-slate-100 transition">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copier
+              </button>
             </div>
-            <h3 class="text-base font-bold text-white mb-2">Choisissez votre formule</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">
-              Sélectionnez votre jeu, votre montant de carte cadeau (Steam, PSN, Xbox) ou votre durée d'abonnement (ChatGPT Plus, Netflix).
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="p-8 rounded-3xl glass-card relative border border-gray-800/80 hover:border-emerald-500/30 transition">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-display font-black text-xl mb-5">
-              2
-            </div>
-            <h3 class="text-base font-bold text-white mb-2">Réglez par D17 ou Flouci</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">
-              Effectuez votre transfert en Dinars Tunisiens directement vers notre numéro postal <strong>51 725 481</strong> depuis l'application <strong>D17</strong> ou <strong>Flouci</strong>.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="p-8 rounded-3xl glass-card relative border border-gray-800/80 hover:border-emerald-500/30 transition">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-display font-black text-xl mb-5">
-              3
-            </div>
-            <h3 class="text-base font-bold text-white mb-2">Réception sur WhatsApp</h3>
-            <p class="text-xs text-gray-400 leading-relaxed">
-              Envoyez la capture d'écran du reçu au <strong>+216 51 725 481</strong> et recevez votre code officiel d'activation en <strong>5 à 15 minutes</strong> chrono !
-            </p>
+            <span id="copy-feedback" class="hidden mt-2 text-xs text-emerald-300"></span>
+            <p class="mt-3 text-xs text-slate-400">Envoyez ensuite la capture du reçu sur WhatsApp pour recevoir votre commande.</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- TRUST & CLIENT GUARANTEES -->
+    <!-- Catalogue -->
+    <section id="catalogue" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        <div>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">Catalogue</h2>
+          <p class="text-sm text-slate-500 mt-1"><span id="products-count">12 services</span> · prix affichés en dinars tunisiens</p>
+        </div>
+        <div class="relative w-full md:w-80">
+          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+          <input type="text" id="search-input" placeholder="Rechercher un service" class="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent">
+        </div>
+      </div>
+
+      <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-8">
+        <button data-category="all" class="category-tab-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap bg-navy-900 text-white border border-navy-900">Tous</button>
+        <button data-category="ai" class="category-tab-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-300 hover:border-navy-900">Intelligence artificielle</button>
+        <button data-category="streaming" class="category-tab-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-300 hover:border-navy-900">Streaming</button>
+        <button data-category="steam" class="category-tab-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-300 hover:border-navy-900">Steam</button>
+        <button data-category="ps5" class="category-tab-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-300 hover:border-navy-900">PlayStation</button>
+        <button data-category="xbox" class="category-tab-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-300 hover:border-navy-900">Xbox</button>
+      </div>
+
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-2xl mb-10">
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">Comment commander</h2>
+          <p class="text-sm text-slate-500 mt-1">Trois étapes, sans carte bancaire internationale.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+            <div class="w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center font-display font-bold mb-4">1</div>
+            <h3 class="font-display font-bold text-navy-900 mb-1.5">Choisissez</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Sélectionnez le service et la formule, puis ajoutez au panier ou commandez directement.</p>
+          </div>
+          <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+            <div class="w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center font-display font-bold mb-4">2</div>
+            <h3 class="font-display font-bold text-navy-900 mb-1.5">Payez en dinars</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Transférez le montant au <strong>51 725 481</strong> par D17 ou Flouci.</p>
+          </div>
+          <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+            <div class="w-9 h-9 rounded-lg bg-navy-900 text-white flex items-center justify-center font-display font-bold mb-4">3</div>
+            <h3 class="font-display font-bold text-navy-900 mb-1.5">Recevez sur WhatsApp</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Envoyez le reçu et recevez votre code ou activation en 5 à 15 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantees -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="rounded-3xl glass-card p-8 sm:p-12 border border-gray-800/80">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          
-          <div>
-            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Fiabilité & Transparence</span>
-            <h2 class="font-display text-2xl sm:text-3xl font-black text-white mt-2">
-              Pourquoi faire confiance à Adam Atef Shop ?
-            </h2>
-            <p class="text-xs sm:text-sm text-gray-400 mt-3 leading-relaxed">
-              Nous facilitons l'accès aux technologies mondiales et aux loisirs vidéo-ludiques pour tous les Tunisiens, sans dépendre des plafonds de cartes internationales.
-            </p>
-
-            <div class="mt-6 space-y-3">
-              <div class="flex items-center gap-3 p-3.5 bg-gray-950/80 border border-gray-800 rounded-xl">
-                <i data-lucide="badge-check" class="w-5 h-5 text-emerald-400 shrink-0"></i>
-                <div class="text-xs text-gray-300">
-                  <strong class="text-white">Codes 100% Officiels :</strong> Obtenus auprès des distributeurs certifiés mondiaux (Valve, Sony, Microsoft, OpenAI).
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3.5 bg-gray-950/80 border border-gray-800 rounded-xl">
-                <i data-lucide="user-check" class="w-5 h-5 text-emerald-400 shrink-0"></i>
-                <div class="text-xs text-gray-300">
-                  <strong class="text-white">Vos Comptes Personnels Respectés :</strong> Les abonnements ChatGPT Plus et Claude sont activés sur votre compte propre, avec tout votre historique conservé.
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3.5 bg-gray-950/80 border border-gray-800 rounded-xl">
-                <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400 shrink-0"></i>
-                <div class="text-xs text-gray-300">
-                  <strong class="text-white">Garantie & Remplacement Immédiat :</strong> Assistance complète 7j/7 jusqu'à la vérification du bon fonctionnement.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Contact Card -->
-          <div class="bg-gray-950/90 border border-emerald-500/20 p-8 rounded-2xl text-center">
-            <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-              <i data-lucide="headset" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-lg font-black text-white">Besoin d'un jeu ou service spécifique ?</h3>
-            <p class="text-xs text-gray-400 mt-2 max-w-sm mx-auto leading-relaxed">
-              Un jeu Steam en solde, un logiciel pro, ou un abonnement qui n'est pas encore dans la liste ? Écrivez-nous directement sur WhatsApp !
-            </p>
-            <div class="mt-6 space-y-2">
-              <a href="https://wa.me/21651725481" target="_blank" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-gray-950 font-black rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20 active:scale-95">
-                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                Écrire sur WhatsApp (+216 51 725 481)
-              </a>
-              <div class="text-[11px] text-gray-500 font-semibold pt-1">
-                Email : <a href="mailto:adam.atefShop@gmail.com" class="text-gray-400 hover:underline">adam.atefShop@gmail.com</a>
-              </div>
-            </div>
-          </div>
-
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="flex gap-4">
+          <div class="shrink-0 w-11 h-11 rounded-lg bg-accent-soft text-accent flex items-center justify-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+          <div><h3 class="font-display font-bold text-navy-900">Codes officiels</h3><p class="text-sm text-slate-600 mt-1">Achetés auprès de distributeurs reconnus.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0 w-11 h-11 rounded-lg bg-accent-soft text-accent flex items-center justify-center"><i data-lucide="user-check" class="w-5 h-5"></i></div>
+          <div><h3 class="font-display font-bold text-navy-900">Votre compte, vos données</h3><p class="text-sm text-slate-600 mt-1">Activation sur votre propre compte lorsque c'est possible.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0 w-11 h-11 rounded-lg bg-accent-soft text-accent flex items-center justify-center"><i data-lucide="life-buoy" class="w-5 h-5"></i></div>
+          <div><h3 class="font-display font-bold text-navy-900">Support réactif</h3><p class="text-sm text-slate-600 mt-1">Assistance et remplacement en cas de problème avéré.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-      <div class="text-center mb-10">
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Aide & Réponses</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-black text-white mt-1">Foire Aux Questions</h2>
-      </div>
-
-      <div class="space-y-3">
-        <details class="group glass-card rounded-2xl p-4 transition border border-gray-800">
-          <summary class="flex justify-between items-center font-bold text-sm cursor-pointer list-none text-gray-200">
-            <span>Combien de temps faut-il pour recevoir mon code ?</span>
-            <span class="text-emerald-400 transition group-open:rotate-180">▼</span>
-          </summary>
-          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
-            Dès confirmation de votre virement D17 ou Flouci avec le reçu envoyé sur WhatsApp au <strong>51 725 481</strong>, votre code ou activation vous est livré en moyenne entre <strong>5 et 15 minutes</strong>.
-          </p>
-        </details>
-
-        <details class="group glass-card rounded-2xl p-4 transition border border-gray-800">
-          <summary class="flex justify-between items-center font-bold text-sm cursor-pointer list-none text-gray-200">
-            <span>Comment s'effectue l'activation de ChatGPT Plus ?</span>
-            <span class="transition text-emerald-400 group-open:rotate-180">▼</span>
-          </summary>
-          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
-            Nous activons votre abonnement en toute sécurité directement sur votre propre compte OpenAI, sans risque de bannissement et en préservant 100% de vos conversations antérieures.
-          </p>
-        </details>
-
-        <details class="group glass-card rounded-2xl p-4 transition border border-gray-800">
-          <summary class="flex justify-between items-center font-bold text-sm cursor-pointer list-none text-gray-200">
-            <span>Les codes Steam et PlayStation sont-ils garantis ?</span>
-            <span class="transition text-emerald-400 group-open:rotate-180">▼</span>
-          </summary>
-          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
-            Oui, tous nos codes proviennent de distributeurs officiels autorisés. Chaque code est vérifié et garanti d'activation à 100%. En cas de doute ou question, nous vous assistons en direct sur WhatsApp.
-          </p>
-        </details>
-
-        <details class="group glass-card rounded-2xl p-4 transition border border-gray-800">
-          <summary class="flex justify-between items-center font-bold text-sm cursor-pointer list-none text-gray-200">
-            <span>Comment payer si je n'ai pas l'application D17 ?</span>
-            <span class="transition text-emerald-400 group-open:rotate-180">▼</span>
-          </summary>
-          <p class="text-xs text-gray-400 mt-3 leading-relaxed">
-            Vous pouvez utiliser l'application mobile gratuite <strong>Flouci</strong>, faire un mandat postal minute dans n'importe quel bureau de poste tunisien vers le numéro <strong>51 725 481</strong>, ou effectuer un virement bancaire sur notre RIB.
-          </p>
-        </details>
+    <!-- FAQ -->
+    <section id="faq" class="bg-white border-t border-slate-200">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="font-display text-3xl font-extrabold text-navy-900 mb-8">Questions fréquentes</h2>
+        <div class="divide-y divide-slate-200 border-y border-slate-200">
+          <details class="group py-4">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-navy-900">Combien de temps pour recevoir ma commande ?<i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i></summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">En général entre 5 et 15 minutes après réception de votre reçu D17 ou Flouci sur WhatsApp.</p>
+          </details>
+          <details class="group py-4">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-navy-900">Comment fonctionne l'activation d'un abonnement IA ?<i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i></summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Nous vous indiquons la procédure adaptée au service après votre commande. Le détail est confirmé sur WhatsApp avant paiement.</p>
+          </details>
+          <details class="group py-4">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-navy-900">Puis-je commander un jeu qui n'est pas dans la liste ?<i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i></summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Oui. Envoyez-nous le titre sur WhatsApp et nous vous donnons le prix en dinars.</p>
+          </details>
+          <details class="group py-4">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-navy-900">Comment payer sans D17 ?<i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i></summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Vous pouvez utiliser Flouci ou un mandat postal vers le 51 725 481. Contactez-nous pour les autres options.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- CART MODAL (DRAWER) -->
-  <div id="cart-modal" class="hidden fixed inset-0 z-50 overflow-hidden">
-    <div onclick="toggleCartModal(false)" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
-
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-8">
-      <div class="w-screen max-w-md bg-[#080C14] border-l border-gray-800 shadow-2xl flex flex-col justify-between">
-        
-        <!-- Cart Header -->
-        <div class="p-6 border-b border-gray-800/80 flex items-center justify-between">
-          <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-display text-base font-black text-white">Mon Panier</h3>
-              <span class="text-[10px] text-gray-400">Adam Atef Shop • 1$ = 3.85 DT</span>
-            </div>
-          </div>
-          <button onclick="toggleCartModal(false)" class="p-2 text-gray-400 hover:text-white rounded-xl hover:bg-gray-900 transition">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
-
-        <!-- Cart Items List -->
-        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-3">
-          <!-- Populated by app.js -->
-        </div>
-
-        <!-- Cart Footer -->
-        <div class="p-6 border-t border-gray-800/80 bg-gray-950/80">
-          <div class="mb-4">
-            <label class="block text-[11px] font-bold text-gray-400 mb-1.5">Méthode de paiement souhaitée :</label>
-            <select id="cart-payment-method" class="w-full bg-gray-900 border border-gray-800 text-gray-200 text-xs rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-              <option value="D17 / Mandat La Poste (51 725 481)">D17 / Mandat La Poste (au 51 725 481)</option>
-              <option value="Flouci App (51 725 481)">Application Flouci (au 51 725 481)</option>
-              <option value="Virement Bancaire (RIB)">Virement Bancaire (sur RIB)</option>
-            </select>
-          </div>
-
-          <div class="flex items-baseline justify-between mb-4">
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Total à payer :</span>
-            <div class="text-right">
-              <div id="cart-total-dt" class="font-display text-2xl font-black text-emerald-400">0.00 DT</div>
-              <div id="cart-total-usd" class="text-xs text-gray-500 font-semibold">~$0.00 USD</div>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <button onclick="submitCartToWhatsApp()" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-gray-950 font-black rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20 active:scale-95">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              Envoyer la commande sur WhatsApp
-            </button>
-            <button onclick="clearCart()" class="w-full py-2 text-gray-500 hover:text-rose-400 text-[11px] font-medium transition">
-              Vider le panier
-            </button>
+  <!-- Cart drawer -->
+  <div id="cart-modal" class="hidden fixed inset-0 z-50">
+    <div onclick="toggleCartModal(false)" class="absolute inset-0 bg-navy-950/50"></div>
+    <div class="absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+      <div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
+        <h3 class="font-display text-lg font-extrabold text-navy-900">Votre panier</h3>
+        <button onclick="toggleCartModal(false)" class="p-2 text-slate-500 hover:text-navy-900 rounded-lg hover:bg-slate-100"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-3"></div>
+      <div class="p-6 border-t border-slate-200 bg-slate-50">
+        <label class="block text-xs font-semibold text-slate-600 mb-1.5">Mode de paiement</label>
+        <select id="cart-payment-method" class="w-full bg-white border border-slate-300 text-sm rounded-lg p-2.5 mb-4 focus:outline-none focus:ring-2 focus:ring-accent">
+          <option value="D17 (51 725 481)">D17 (51 725 481)</option>
+          <option value="Flouci (51 725 481)">Flouci (51 725 481)</option>
+          <option value="Virement bancaire">Virement bancaire</option>
+        </select>
+        <div class="flex items-end justify-between mb-4">
+          <span class="text-sm text-slate-600">Total</span>
+          <div class="text-right">
+            <div id="cart-total-dt" class="font-display text-2xl font-extrabold text-navy-900">0.00 DT</div>
+            <div id="cart-total-usd" class="text-xs text-slate-500">~$0.00</div>
           </div>
         </div>
-
+        <button onclick="submitCartToWhatsApp()" class="w-full py-3 bg-[#1FA855] hover:bg-[#188a45] text-white text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Envoyer la commande sur WhatsApp
+        </button>
+        <button onclick="clearCart()" class="w-full mt-2 py-2 text-xs text-slate-500 hover:text-red-600">Vider le panier</button>
       </div>
     </div>
   </div>
 
-  <!-- FLOATING QUICK WHATSAPP BUTTON -->
-  <a href="https://wa.me/21651725481" target="_blank" class="fixed bottom-6 right-6 z-40 p-3.5 bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-black rounded-2xl shadow-2xl shadow-emerald-500/40 flex items-center gap-2 transition hover:scale-105 active:scale-95 group" title="Commander sur WhatsApp">
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/21651725481" target="_blank" class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-[#1FA855] hover:bg-[#188a45] text-white flex items-center justify-center shadow-lg transition" title="WhatsApp">
     <i data-lucide="message-circle" class="w-6 h-6"></i>
-    <span class="hidden md:inline text-xs font-black pr-1">Commander en Direct</span>
   </a>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#05080E] border-t border-gray-800/80 py-10 text-xs text-gray-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black">
-          ⚡
+  <!-- Footer -->
+  <footer class="bg-navy-950 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2.5 mb-3">
+          <div class="w-9 h-9 rounded-lg bg-white text-navy-900 flex items-center justify-center font-display font-extrabold text-sm">AA</div>
+          <span class="font-display font-extrabold text-white">Adam Atef Shop</span>
         </div>
-        <div>
-          <span class="font-bold text-gray-300">Adam Atef Shop</span>
-          <span class="block text-[11px] text-gray-500">Service d'abonnements & gaming en Dinars Tunisiens • Taux appliqué : 1$ = 3.85 DT</span>
-        </div>
+        <p class="text-xs leading-relaxed">Abonnements, outils IA et cartes gaming payables en dinars tunisiens.</p>
       </div>
-      <div class="flex flex-wrap items-center gap-4 text-[11px]">
-        <span class="text-gray-400">Paiement D17 & Flouci : <strong class="text-white">51 725 481</strong></span>
-        <span class="opacity-40">•</span>
-        <a href="https://wa.me/21651725481" target="_blank" class="text-emerald-400 hover:underline">WhatsApp Direct</a>
-        <span class="opacity-40">•</span>
-        <a href="mailto:adam.atefShop@gmail.com" class="text-gray-400 hover:underline">adam.atefShop@gmail.com</a>
-        <span class="opacity-40">•</span>
-        <a href="https://www.facebook.com/1524552757399708" target="_blank" class="text-blue-400 hover:underline">Facebook Page</a>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Contact</h4>
+        <ul class="space-y-2 text-xs">
+          <li>WhatsApp : <a href="https://wa.me/21651725481" class="hover:text-white">+216 51 725 481</a></li>
+          <li>Email : <a href="mailto:adam.atefShop@gmail.com" class="hover:text-white">adam.atefShop@gmail.com</a></li>
+          <li><a href="https://www.facebook.com/1524552757399708" target="_blank" class="hover:text-white">Page Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Paiement</h4>
+        <ul class="space-y-2 text-xs">
+          <li>D17 / Flouci : <strong class="text-white">51 725 481</strong></li>
+          <li>Taux appliqué : <span class="current-exchange-rate">1$ = 3.9 DT</span></li>
+        </ul>
       </div>
     </div>
+    <div class="border-t border-white/10 py-4 text-center text-[11px] text-slate-500">© Adam Atef Shop. Tous droits réservés.</div>
   </footer>
 
-  <!-- Scripts -->
   <script src="config.js"></script>
   <script src="products.js"></script>
   <script src="app.js"></script>

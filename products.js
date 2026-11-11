@@ -1,6 +1,6 @@
 // ===================================================================
 // CATALOGUE DES PRODUITS & SERVICES DIGITAUX - ADAM ATEF SHOP
-// Prix en USD et convertis automatiquement en DT (Taux: 1$ = 3.85 DT)
+// Prix en USD et convertis automatiquement en DT (Taux: 1$ = 3.9 DT)
 // ===================================================================
 
 const CATEGORIES_METADATA = {
