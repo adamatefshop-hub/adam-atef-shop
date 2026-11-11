@@ -70,10 +70,8 @@ function renderProducts() {
   container.innerHTML = visible.map(p => {
     const first = p.options[0];
     const header = p.image
-      ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">`
-      : `<div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg, ${p.colors[0]}, ${p.colors[1]})">
-           <i data-lucide="${p.icon || 'gamepad-2'}" class="w-14 h-14 text-white/90" stroke-width="1.5"></i>
-         </div>`;
+      ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transition duration-300 hover:scale-105" loading="lazy" onerror="this.onerror=null; this.src='assets/steam_gaming_ad_1794407787926.jpg'">`
+      : `<img src="assets/steam_gaming_ad_1794407787926.jpg" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">`;
     return `
     <article class="product-card bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col hover:shadow-lg hover:border-slate-300 transition" data-id="${p.id}">
       <div class="relative h-40 bg-slate-100">
