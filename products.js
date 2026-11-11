@@ -21,14 +21,14 @@ const PRODUCTS_DATA = [
   // -----------------------------------------------------------------
   {
     id: "chatgpt-plus",
-    name: "ChatGPT Plus (GPT-4o & Canvas)",
+    name: "ChatGPT Plus (Astra, GPT-4o & Canvas)",
     category: "ai",
     categoryLabel: "Intelligence Artificielle",
     badge: "Bestseller IA",
     brand: "OpenAI",
     icon: "bot",
     image: "assets/ai_subscriptions_ad_1794407768863.jpg",
-    description: "Accès illimité prioritaire à GPT-4o, génération d'images DALL-E 3, Canvas et analyse de documents.",
+    description: "Accès complet aux modèles de pointe Astra & GPT-4o, génération d'images DALL-E 3, mode vocal avancé, Canvas et analyse de code.",
     options: [
       { name: "Recharge / Activation 1 Mois ($20)", priceUSD: 20 },
       { name: "Abonnement 2 Mois ($40)", priceUSD: 40 },
@@ -37,14 +37,14 @@ const PRODUCTS_DATA = [
   },
   {
     id: "claude-pro",
-    name: "Claude Pro (Anthropic)",
+    name: "Claude Pro (Fable, Sonnet 3.5 & Opus)",
     category: "ai",
     categoryLabel: "Intelligence Artificielle",
     badge: "Dev & Code",
     brand: "Anthropic",
     icon: "cpu",
     image: "assets/ai_subscriptions_ad_1794407768863.jpg",
-    description: "Accès à Claude 3.5 Sonnet & Opus avec fenêtre de contexte géante de 200k tokens. Idéal développeurs.",
+    description: "Accès prioritaire aux modèles Fable, Claude 3.5 Sonnet & Opus avec fenêtre de contexte géante de 200k tokens. Idéal développeurs.",
     options: [
       { name: "Recharge / Activation 1 Mois ($20)", priceUSD: 20 },
       { name: "Abonnement 2 Mois ($40)", priceUSD: 40 }
@@ -273,7 +273,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "blocks",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1672970/header.jpg",
+    image: "assets/roblox.jpg",
     description: "Cartes cadeaux Roblox officielles pour acheter des Robux, skins, avatars et passes de jeu.",
     options: [
       { name: "800 Robux ($10)", priceUSD: 10 },
@@ -289,7 +289,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "zap",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg",
+    image: "assets/fortnite_vbucks.jpg",
     description: "V-Bucks pour la boutique d'objets Fortnite, le Pass de combat, emotes et skins exclusifs.",
     options: [
       { name: "1 000 V-Bucks", priceUSD: 9 },
@@ -370,7 +370,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "flame",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg",
+    image: "assets/free_fire.jpg",
     description: "Recharge directe de Diamants Free Fire par ID joueur ou code officiel pour Pass et skins.",
     options: [
       { name: "100 Diamants", priceUSD: 1 },
@@ -402,7 +402,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "swords",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg",
+    image: "assets/valorant.jpg",
     description: "Cartes Valorant Points pour acheter les collections de skins Vandal, Phantom et passes de combat.",
     options: [
       { name: "475 VP", priceUSD: 5 },
@@ -418,7 +418,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "shield",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg",
+    image: "assets/league_of_legends.jpg",
     description: "Riot Points pour débloquer champions, skins légendaires, balises et passes d'événements LoL.",
     options: [
       { name: "575 RP", priceUSD: 5 },
@@ -433,7 +433,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "gem",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg",
+    image: "assets/genshin_impact.jpg",
     description: "Cristaux primaires pour vos invocations de personnages et d'armes sur Genshin Impact.",
     options: [
       { name: "300 Cristaux", priceUSD: 5 },
@@ -464,7 +464,7 @@ const PRODUCTS_DATA = [
     category: "currency",
     categoryLabel: "Monnaie de jeu",
     icon: "crown",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg",
+    image: "assets/fortnite_crew.jpg",
     description: "Pass de combat inclus, 1 000 V-Bucks par mois et pack de skins exclusifs de l'équipage.",
     options: [
       { name: "1 mois d'abonnement", priceUSD: 12 },
