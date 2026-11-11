@@ -147,6 +147,18 @@ Paiement : D17 / Flouci au 51725481
 Pouvez-vous confirmer la disponibilité ? Merci.`);
 }
 
+function requestCustomService() {
+  const box = document.getElementById("custom-request");
+  const need = box ? box.value.trim() : "";
+  if (!need) { showToast("Décrivez le service dont vous avez besoin"); if (box) box.focus(); return; }
+  openWhatsApp(`Bonjour Adam Atef Shop,
+J'ai besoin du service suivant :
+
+${need}
+
+Pouvez-vous me donner le prix en dinars et le délai ? Merci.`);
+}
+
 function orderCustomItem() {
   openWhatsApp(`Bonjour Adam Atef Shop,
 Je cherche un jeu ou un abonnement qui n'est pas dans la liste. Pouvez-vous me donner le prix en dinars (${fmtRate()}) ? Merci.`);
