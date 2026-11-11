@@ -5,6 +5,13 @@
 let currentCategory = "all";
 let searchQuery = "";
 let cart = [];
+const PAGE_SIZE = 24;
+let visibleCount = PAGE_SIZE;
+
+function showMoreProducts() {
+  visibleCount += PAGE_SIZE;
+  renderProducts();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   renderExchangeRateBadge();
@@ -56,12 +63,21 @@ function renderProducts() {
     return;
   }
 
-  container.innerHTML = filtered.map(p => {
+  const visible = filtered.slice(0, visibleCount);
+  const moreWrap = document.getElementById("show-more-wrap");
+  if (moreWrap) moreWrap.classList.toggle("hidden", filtered.length <= visibleCount);
+
+  container.innerHTML = visible.map(p => {
     const first = p.options[0];
+    const header = p.image
+      ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">`
+      : `<div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg, ${p.colors[0]}, ${p.colors[1]})">
+           <i data-lucide="${p.icon || 'gamepad-2'}" class="w-14 h-14 text-white/90" stroke-width="1.5"></i>
+         </div>`;
     return `
     <article class="product-card bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col hover:shadow-lg hover:border-slate-300 transition" data-id="${p.id}">
       <div class="relative h-40 bg-slate-100">
-        <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">
+        ${header}
         <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 text-[11px] font-semibold text-navy-900">${p.categoryLabel}</span>
       </div>
       <div class="p-5 flex-1 flex flex-col">
@@ -279,11 +295,12 @@ function setupEventListeners() {
     btn.classList.add("active", "bg-navy-900", "text-white", "border-navy-900");
     btn.classList.remove("bg-white", "text-slate-600", "border-slate-300");
     currentCategory = btn.getAttribute("data-category");
+    visibleCount = PAGE_SIZE;
     renderProducts();
   }));
 
   const search = document.getElementById("search-input");
-  if (search) search.addEventListener("input", e => { searchQuery = e.target.value; renderProducts(); });
+  if (search) search.addEventListener("input", e => { searchQuery = e.target.value; visibleCount = PAGE_SIZE; renderProducts(); });
 }
 
 function showToast(text) {

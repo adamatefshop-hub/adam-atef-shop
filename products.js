@@ -329,3 +329,126 @@ const PRODUCTS_DATA = [
     ]
   }
 ];
+
+// ===================================================================
+// MONNAIE DE JEU & JEUX INDIVIDUELS
+// Prix de référence en USD. Disponibilité confirmée sur WhatsApp.
+// ===================================================================
+
+const GRADIENTS = [
+  ["#1E3A78", "#2F5BEA"], ["#0F766E", "#14B8A6"], ["#7C2D12", "#EA580C"], ["#581C87", "#A855F7"],
+  ["#831843", "#EC4899"], ["#14532D", "#22C55E"], ["#1E293B", "#475569"], ["#7F1D1D", "#EF4444"],
+  ["#0C4A6E", "#0EA5E9"], ["#713F12", "#EAB308"]
+];
+
+function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""); }
+
+// Carte de monnaie / recharge : options = [[label, usd], ...]
+function currency(name, brand, icon, colors, desc, options) {
+  return {
+    id: slugify(name), name, brand, category: "currency", categoryLabel: "Monnaie de jeu",
+    icon, colors, description: desc,
+    options: options.map(o => ({ name: o[0], priceUSD: o[1] }))
+  };
+}
+
+// Jeu individuel : plateformes { pc, ps, xbox } = prix USD (omettre si indisponible)
+function game(name, brand, icon, desc, prices) {
+  const options = [];
+  if (prices.pc != null) options.push({ name: "PC (clé Steam)", priceUSD: prices.pc });
+  if (prices.ps != null) options.push({ name: "PlayStation 5", priceUSD: prices.ps });
+  if (prices.xbox != null) options.push({ name: "Xbox Series X|S", priceUSD: prices.xbox });
+  const idx = [...name].reduce((a, c) => a + c.charCodeAt(0), 0) % GRADIENTS.length;
+  return {
+    id: slugify(name), name, brand, category: "games", categoryLabel: "Jeux",
+    icon, colors: GRADIENTS[idx], description: desc, options
+  };
+}
+
+PRODUCTS_DATA.push(
+  // ------------------------- MONNAIE DE JEU -------------------------
+  currency("Robux (Roblox)", "Roblox", "blocks", ["#B91C1C", "#EF4444"], "Cartes cadeaux Roblox pour acheter des Robux, avatars et objets en jeu.",
+    [["800 Robux ($10)", 10], ["2 000 Robux ($25)", 25], ["4 500 Robux ($50)", 50], ["10 000 Robux ($100)", 100]]),
+  currency("Fortnite V-Bucks", "Epic Games", "zap", ["#4C1D95", "#8B5CF6"], "V-Bucks pour la boutique d'objets Fortnite, le Pass de combat et les skins.",
+    [["1 000 V-Bucks", 9], ["2 800 V-Bucks", 23], ["5 000 V-Bucks", 36], ["13 500 V-Bucks", 90]]),
+  currency("Minecoins (Minecraft)", "Minecraft", "pickaxe", ["#166534", "#4ADE80"], "Minecoins pour le Marketplace Minecraft : skins, mondes et packs de textures.",
+    [["1 020 Minecoins", 8], ["1 720 Minecoins", 13], ["3 500 Minecoins", 26]]),
+  currency("GTA Online Shark Cards", "Rockstar Games", "banknote", ["#14532D", "#16A34A"], "Shark Cards pour obtenir des GTA\$ dans GTA Online.",
+    [["Red Shark (100 000 GTA$)", 2], ["Green Shark (250 000 GTA$)", 5], ["Bull Shark (500 000 GTA$)", 10], ["Great White (1 250 000 GTA$)", 20], ["Whale Shark (3 500 000 GTA$)", 50], ["Megalodon (8 000 000 GTA$)", 100]]),
+  currency("Call of Duty Points", "Activision", "crosshair", ["#1F2937", "#6B7280"], "Points COD pour le Battle Pass et les packs d'armes sur Warzone, Black Ops et Mobile.",
+    [["1 100 CP", 10], ["2 400 CP", 20], ["5 000 CP", 40], ["10 000 CP", 80]]),
+  currency("EA FC Points", "EA Sports", "trophy", ["#0F172A", "#2563EB"], "FC Points pour ouvrir des packs dans Ultimate Team.",
+    [["1 050 FC Points", 8], ["2 800 FC Points", 22], ["5 900 FC Points", 45], ["12 000 FC Points", 90]]),
+  currency("Free Fire Diamants", "Garena", "flame", ["#9A3412", "#F97316"], "Diamants Free Fire pour skins, personnages et Elite Pass.",
+    [["100 Diamants", 1], ["520 Diamants", 5], ["1 060 Diamants", 10], ["2 180 Diamants", 20]]),
+  currency("PUBG Mobile UC", "Krafton", "target", ["#713F12", "#CA8A04"], "UC pour le Royale Pass, skins et caisses PUBG Mobile.",
+    [["60 UC", 1], ["325 UC", 5], ["660 UC", 10], ["1 800 UC", 25]]),
+  currency("Valorant Points", "Riot Games", "swords", ["#7F1D1D", "#F43F5E"], "Valorant Points pour skins d'armes, agents et Battle Pass.",
+    [["475 VP", 5], ["1 000 VP", 10], ["2 050 VP", 20], ["3 650 VP", 35]]),
+  currency("League of Legends RP", "Riot Games", "shield", ["#1E3A8A", "#3B82F6"], "Riot Points pour skins, champions et passes de League of Legends.",
+    [["575 RP", 5], ["1 380 RP", 10], ["2 800 RP", 20]]),
+  currency("Genshin Impact Cristaux", "HoYoverse", "gem", ["#0E7490", "#22D3EE"], "Cristaux de la Genèse pour tirages de personnages et d'armes.",
+    [["300 Cristaux", 5], ["980 Cristaux", 15], ["1 980 Cristaux", 30], ["3 280 Cristaux", 50]]),
+  currency("Apex Legends Coins", "EA", "star", ["#7F1D1D", "#DC2626"], "Apex Coins pour le Battle Pass, skins légendaires et packs.",
+    [["1 000 Apex Coins", 10], ["2 150 Apex Coins", 20], ["4 350 Apex Coins", 40]]),
+  currency("Fortnite Crew", "Epic Games", "crown", ["#312E81", "#6366F1"], "Abonnement Fortnite Crew : Pass de combat, 1 000 V-Bucks par mois et skin exclusif.",
+    [["1 mois", 12], ["3 mois", 36]]),
+
+  // ------------------------- JEUX -------------------------
+  game("Minecraft Java & Bedrock", "Mojang", "pickaxe", "Les éditions Java et Bedrock pour PC, ou l'édition Bedrock sur console.", { pc: 30, ps: 30, xbox: 30 }),
+  game("Grand Theft Auto V", "Rockstar Games", "car", "GTA V avec GTA Online, solo et mode histoire complet.", { pc: 15, ps: 20, xbox: 20 }),
+  game("Red Dead Redemption 2", "Rockstar Games", "tent", "Western en monde ouvert, histoire complète et Red Dead Online.", { pc: 30, ps: 30, xbox: 30 }),
+  game("EA Sports FC 26", "EA Sports", "trophy", "Le dernier opus de football avec Ultimate Team et modes carrière.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Call of Duty: Black Ops 7", "Activision", "crosshair", "Campagne, multijoueur et Zombies.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Call of Duty: Black Ops 6", "Activision", "crosshair", "Campagne, multijoueur et Zombies.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Call of Duty: Modern Warfare III", "Activision", "crosshair", "Campagne, multijoueur et Zombies.", { pc: 60, ps: 60, xbox: 60 }),
+  game("Battlefield 6", "EA", "shield", "Shooter militaire à grande échelle, solo et multijoueur.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Elden Ring", "FromSoftware", "sword", "RPG d'action en monde ouvert, créé avec George R. R. Martin.", { pc: 60, ps: 60, xbox: 60 }),
+  game("Sekiro: Shadows Die Twice", "FromSoftware", "sword", "Action-aventure exigeante dans le Japon féodal.", { pc: 60, ps: 60, xbox: 60 }),
+  game("Dark Souls III", "FromSoftware", "flame", "Le dernier chapitre de la saga Dark Souls.", { pc: 40, ps: 40, xbox: 40 }),
+  game("Cyberpunk 2077", "CD Projekt Red", "cpu", "RPG futuriste à Night City, avec l'extension Phantom Liberty en option.", { pc: 30, ps: 30, xbox: 30 }),
+  game("The Witcher 3: Wild Hunt", "CD Projekt Red", "sword", "Édition complète du RPG culte avec extensions.", { pc: 15, ps: 20, xbox: 20 }),
+  game("Baldur's Gate 3", "Larian Studios", "dices", "RPG au tour par tour, coopératif jusqu'à 4 joueurs.", { pc: 60, ps: 60 }),
+  game("Hogwarts Legacy", "Warner Bros.", "wand", "RPG en monde ouvert dans l'univers de Harry Potter.", { pc: 40, ps: 40, xbox: 40 }),
+  game("God of War (2018)", "Santa Monica Studio", "axe", "Kratos et Atreus dans les royaumes nordiques.", { pc: 20, ps: 20 }),
+  game("God of War Ragnarök", "Santa Monica Studio", "axe", "La suite de God of War, fin de la saga nordique.", { pc: 50, ps: 50 }),
+  game("Marvel's Spider-Man 2", "Insomniac Games", "bug", "Peter Parker et Miles Morales dans un New York ouvert.", { pc: 60, ps: 60 }),
+  game("The Last of Us Part I", "Naughty Dog", "heart-pulse", "Remake de l'aventure post-apocalyptique de Joel et Ellie.", { pc: 40, ps: 60 }),
+  game("Ghost of Tsushima Director's Cut", "Sucker Punch", "swords", "Samouraï en monde ouvert avec l'extension Iki Island.", { pc: 60, ps: 60 }),
+  game("Horizon Forbidden West", "Guerrilla Games", "bow-arrow", "Aloy explore l'Ouest interdit, face à des machines géantes.", { pc: 50, ps: 50 }),
+  game("Black Myth: Wukong", "Game Science", "sparkles", "Action-RPG inspiré de La Pérégrination vers l'Ouest.", { pc: 60, ps: 60 }),
+  game("Assassin's Creed Shadows", "Ubisoft", "swords", "Assassin's Creed dans le Japon féodal.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Forza Horizon 5", "Playground Games", "car", "Course en monde ouvert au Mexique.", { pc: 40, xbox: 40 }),
+  game("Gran Turismo 7", "Polyphony Digital", "gauge", "Simulation de course avec plus de 400 voitures.", { ps: 60 }),
+  game("Resident Evil 4", "Capcom", "skull", "Remake du classique du survival horror.", { pc: 40, ps: 40, xbox: 40 }),
+  game("Resident Evil Village", "Capcom", "skull", "Survival horror à la première personne.", { pc: 20, ps: 20, xbox: 20 }),
+  game("Helldivers 2", "Arrowhead", "rocket", "Shooter coopératif à 4 joueurs contre des hordes d'aliens.", { pc: 40, ps: 40 }),
+  game("Palworld", "Pocketpair", "paw-print", "Survie et capture de créatures en monde ouvert.", { pc: 30, xbox: 30 }),
+  game("Starfield", "Bethesda", "orbit", "RPG spatial de Bethesda avec des centaines de planètes.", { pc: 70, xbox: 70 }),
+  game("Diablo IV", "Blizzard", "flame", "Action-RPG, avec ou sans l'extension Vessel of Hatred.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Mortal Kombat 1", "NetherRealm", "swords", "Combat avec un nouveau Kombat Kronicle.", { pc: 50, ps: 50, xbox: 50 }),
+  game("Tekken 8", "Bandai Namco", "swords", "Le roi du combat 3D, avec Unreal Engine 5.", { pc: 60, ps: 60, xbox: 60 }),
+  game("Street Fighter 6", "Capcom", "swords", "Combat avec modes World Tour et Battle Hub.", { pc: 40, ps: 40, xbox: 40 }),
+  game("Dragon Ball: Sparking! Zero", "Bandai Namco", "zap", "Plus de 180 personnages dans le combat Budokai Tenkaichi.", { pc: 60, ps: 60, xbox: 60 }),
+  game("NBA 2K25", "2K Sports", "dribbble", "Simulation de basketball avec MyCAREER et MyTEAM.", { pc: 60, ps: 60, xbox: 60 }),
+  game("WWE 2K25", "2K Sports", "dumbbell", "Catch avec nouveaux modes Island et MyRISE.", { pc: 60, ps: 60, xbox: 60 }),
+  game("Counter-Strike 2 Prime", "Valve", "crosshair", "Statut Prime pour CS2 : matchmaking prioritaire et récompenses.", { pc: 15 }),
+  game("Rust", "Facepunch", "hammer", "Survie multijoueur en monde ouvert.", { pc: 40 }),
+  game("Lethal Company", "Zeekerss", "ghost", "Horreur coopérative jusqu'à 4 joueurs.", { pc: 10 }),
+  game("Terraria", "Re-Logic", "pickaxe", "Exploration et construction en 2D.", { pc: 10, ps: 10, xbox: 10 }),
+  game("Stardew Valley", "ConcernedApe", "sprout", "Ferme et vie de village, jouable en coopération.", { pc: 15, ps: 15, xbox: 15 }),
+  game("Hollow Knight", "Team Cherry", "bug", "Metroidvania 2D dans un royaume d'insectes.", { pc: 15, ps: 15, xbox: 15 }),
+  game("Hades", "Supergiant Games", "flame", "Roguelike d'action dans les Enfers grecs.", { pc: 25, ps: 25, xbox: 25 }),
+  game("It Takes Two", "Hazelight", "users", "Aventure coopérative à deux joueurs.", { pc: 40, ps: 40, xbox: 40 }),
+  game("Split Fiction", "Hazelight", "users", "Aventure coopérative entre science-fiction et fantasy.", { pc: 50, ps: 50, xbox: 50 }),
+  game("Sea of Thieves", "Rare", "anchor", "Aventure pirate multijoueur en monde ouvert.", { pc: 40, ps: 40, xbox: 40 }),
+  game("Halo: The Master Chief Collection", "343 Industries", "shield", "Six jeux Halo dans une seule collection.", { pc: 40, xbox: 40 }),
+  game("Monster Hunter Wilds", "Capcom", "paw-print", "Chasse de monstres dans des écosystèmes vivants.", { pc: 70, ps: 70, xbox: 70 }),
+  game("Dying Light 2", "Techland", "biohazard", "Parkour et survie dans une ville post-apocalyptique.", { pc: 30, ps: 30, xbox: 30 }),
+  game("Alan Wake 2", "Remedy", "flashlight", "Survival horror narratif.", { pc: 50, ps: 50, xbox: 50 }),
+  game("Persona 3 Reload", "Atlus", "moon", "Remake du JRPG culte, dans l'heure cachée.", { pc: 50, ps: 50, xbox: 50 }),
+  game("Final Fantasy VII Rebirth", "Square Enix", "sword", "Deuxième partie du remake de FF7.", { pc: 70, ps: 70 }),
+  game("Death Stranding Director's Cut", "Kojima Productions", "package", "Livraison dans une Amérique dévastée.", { pc: 40, ps: 40 }),
+  game("Dead by Daylight", "Behaviour", "ghost", "Horreur asymétrique à 4 contre 1.", { pc: 20, ps: 20, xbox: 20 }),
+  game("Need for Speed Unbound", "EA", "car", "Course de rue avec un style graphique unique.", { pc: 40, ps: 40, xbox: 40 })
+);
